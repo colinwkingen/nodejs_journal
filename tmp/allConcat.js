@@ -1,3 +1,23 @@
+var Game = require('./../js/game.js').gameModule;
+
+
+$(document).ready( function() {
+  $('#start_game').submit( function(event) {
+
+  });
+  $('button').click(function(event) {
+    event.preventDefault();
+    var thisGame = new Game();
+    // <button class="color" id="red_button">
+    // <button class="color" id="blue_button">
+    // <button class="color" id="yellow_button">
+    var color =  (this.id.split("_"))[0];
+    // var color = button_id[0];
+    thisGame.checkEntry(color);
+    $('#simon_text').append(color)
+  });
+});
+
 var Entry = require('./../js/journal.js').entryModule;
 
 $(document).ready( function() {
